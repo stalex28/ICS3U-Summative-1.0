@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1526412749 source:p:\ics3u summative\djordjevic_ics3u_minesweeper\minesweeperallegro.cpp
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_native_dialog.h>
+	"Minesweeper.h"
+
+1526412765 p:\ics3u summative\djordjevic_ics3u_minesweeper\minesweeper.h
+
+1527103151 source:d:\ics3u summative\djordjevic_ics3u_minesweeper\minesweeper_main.cpp
+	<stdio.h>
+	"Minesweeper.h"
+
+1527014101 d:\ics3u summative\djordjevic_ics3u_minesweeper\minesweeper.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_native_dialog.h>
+
+1527010987 source:d:\ics3u summative\djordjevic_ics3u_minesweeper\minesweeperallegro.cpp
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	"Minesweeper.h"
+
+1526585310 source:d:\ics3u summative\djordjevic_ics3u_minesweeper\keyboardmap.cpp
+	<stdio.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_native_dialog.h>
+
+1527012251 source:d:\ics3u summative\djordjevic_ics3u_minesweeper\mineplacer.cpp
+	<stdio.h>
+	"Minesweeper.h"
+	<time.h>
+
+1527103215 source:d:\ics3u summative\djordjevic_ics3u_minesweeper\clicker.cpp
+	"Minesweeper.h"
+	<stdio.h>
+
