@@ -1,7 +1,6 @@
 /*******************************************************
- *  Alex Djordjevic ICS3U 2018 Minesweeper Summative  *
- *****************************************************
- testing**/
+ *  Alex Djordjevic ICS3U 2018 Minesweeper Summative   *
+ *******************************************************/
 #include <stdio.h>
 #include "Minesweeper.h"
 
