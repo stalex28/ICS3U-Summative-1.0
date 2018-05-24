@@ -40,22 +40,26 @@ int main(int argc, char *argv[]){
 
 	// Create a bitmap and load the image
 	ALLEGRO_BITMAP *square = nullptr;
-	square = al_load_bitmap("square1.bmp");
+	square = al_load_bitmap("Tile.bmp");
+	ALLEGRO_BITMAP *selector = nullptr;
+	selector = al_load_bitmap("square1.bmp");
 
 	// remove background of image
 	al_convert_mask_to_alpha(square, BLACK);
+	al_convert_mask_to_alpha(selector, BLACK);
 
 	// move ball across screen using keyboard.
 	int dx = 52;
 	int dy = 72;
+	int numHolder = 0;
 	al_clear_to_color(SLATEGREY);
-	al_draw_bitmap(square, dx, dy, 0);
 	al_draw_text(font, BLACK, 640/2, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr pre-alpha");
 	for(int i = 50; i <= (height*20); i+= 50){
         for(int j = 70; j <= (width*20 + 20); j+= 50){
             al_draw_bitmap(square, i, j, 0);
         }
     }
+    al_draw_bitmap(selector, dx, dy, 0);
 	al_flip_display();
 	bool doexit = false;
     while (!doexit) {
@@ -100,13 +104,9 @@ int main(int argc, char *argv[]){
                 dy = 72;
          	}
          	al_clear_to_color(SLATEGREY);
-		 	al_draw_bitmap(square, dx, dy, 0);
 		 	al_draw_text(font, BLACK, 640/2, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr pre-alpha");
-		 	for(int i = 50; i <= (height*20); i+= 50){
-                for(int j = 70; j <= (width*20 + 20); j+= 50){
-                    al_draw_bitmap(square, i, j, 0);
-                }
-            }
+		 	drawGrid(fields, dx, dy, number);
+		 	al_draw_bitmap(selector, dx, dy, 0);
 		 	al_flip_display();
 		}
 	}

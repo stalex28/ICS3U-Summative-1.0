@@ -72,3 +72,36 @@
 	<stdio.h>
 	"Minesweeper.h"
 
+1527184226 source:d:\ics3u-summative-1.0\djordjevic_ics3u_minesweeper\clicker.cpp
+	"Minesweeper.h"
+	<stdio.h>
+
+1527184991 d:\ics3u-summative-1.0\djordjevic_ics3u_minesweeper\minesweeper.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_native_dialog.h>
+
+1527182718 source:d:\ics3u-summative-1.0\djordjevic_ics3u_minesweeper\mineplacer.cpp
+	<stdio.h>
+	"Minesweeper.h"
+	<time.h>
+
+1527186389 source:d:\ics3u-summative-1.0\djordjevic_ics3u_minesweeper\minesweeper_main.cpp
+	<stdio.h>
+	"Minesweeper.h"
+
+1527010987 source:d:\ics3u-summative-1.0\djordjevic_ics3u_minesweeper\minesweeperallegro.cpp
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	"Minesweeper.h"
+
+1527186895 source:d:\ics3u-summative-1.0\djordjevic_ics3u_minesweeper\drawgrid.cpp
+	<stdio.h>
+	"Minesweeper.h"
+

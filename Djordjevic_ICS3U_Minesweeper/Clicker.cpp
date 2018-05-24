@@ -8,5 +8,8 @@ bool clicker(int fields[], int x, int y){
     if(fields[holder] == 9){
         exit = true;
     }
+    else if (fields[holder] == 0){
+        fields[holder] = 10;
+    }
     return exit;
 }
