@@ -38,27 +38,17 @@ int main(int argc, char *argv[]){
         }
     }
 
-	// Create a bitmap and load the image
-	ALLEGRO_BITMAP *square = nullptr;
-	square = al_load_bitmap("Tile.bmp");
 	ALLEGRO_BITMAP *selector = nullptr;
 	selector = al_load_bitmap("square1.bmp");
-
-	// remove background of image
-	al_convert_mask_to_alpha(square, BLACK);
 	al_convert_mask_to_alpha(selector, BLACK);
 
 	// move ball across screen using keyboard.
-	int dx = 52;
-	int dy = 72;
-	int numHolder = 0;
+	int dx = 48;
+	int dy = 67;
+	char f = 'o';
 	al_clear_to_color(SLATEGREY);
 	al_draw_text(font, BLACK, 640/2, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr pre-alpha");
-	for(int i = 50; i <= (height*20); i+= 50){
-        for(int j = 70; j <= (width*20 + 20); j+= 50){
-            al_draw_bitmap(square, i, j, 0);
-        }
-    }
+	drawGrid(fields, dx, dy, number);
     al_draw_bitmap(selector, dx, dy, 0);
 	al_flip_display();
 	bool doexit = false;
@@ -88,20 +78,25 @@ int main(int argc, char *argv[]){
                		doexit = true;
                		break;
                 case ALLEGRO_KEY_ENTER:
-                    doexit = clicker(fields, dx, dy);
+                    f = 'o';
+                    doexit = clicker(fields, dx, dy, f);
+                    break;
+                case ALLEGRO_KEY_F:
+                    f = 'f';
+                    doexit = clicker(fields, dx, dy, f);
                     break;
          	}
-         	if(dx > height*20+2){
-                dx = height*20+2;
+         	if(dx > height*20-2){
+                dx = height*20-2;
          	}
-         	if(dx < 52){
-                dx = 52;
+         	if(dx < 48){
+                dx = 48;
          	}
-         	if(dy > width*20+22){
-                dy = width*20+22;
+         	if(dy > width*20+17){
+                dy = width*20+17;
          	}
-         	if(dy < 72){
-                dy = 72;
+         	if(dy < 67){
+                dy = 67;
          	}
          	al_clear_to_color(SLATEGREY);
 		 	al_draw_text(font, BLACK, 640/2, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr pre-alpha");
@@ -112,7 +107,6 @@ int main(int argc, char *argv[]){
 	}
 
 	//Release the bitmap data and exit with no errors
-   	al_destroy_bitmap(square);
 	al_destroy_display(display);
 	return 0;
 }

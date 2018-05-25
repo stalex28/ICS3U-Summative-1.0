@@ -32,5 +32,5 @@ struct Highscore {
 void initializeAllegro();
 int checkSetup(ALLEGRO_DISPLAY *display, ALLEGRO_FONT *font);
 int minePlacer(int fields[], int number, int mines);
-bool clicker(int fields[], int x, int y);
+bool clicker(int fields[], int x, int y, char f);
 int drawGrid(int fields[], int x, int y, int num);
