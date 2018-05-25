@@ -21,9 +21,8 @@ int drawGrid(int fields[], int x, int y, int num){
         switch(fields[i]){
             case 10:
                 yco = i / 8;
-                xco = i - (yco * 8);
+                xco = i - (yco * 8)*50 + 50;
                 yco = yco*50 + 60;
-                xco = xco*50 + 50;
                 al_draw_bitmap(clearField, xco, yco, 0);
                 break;
             default:
