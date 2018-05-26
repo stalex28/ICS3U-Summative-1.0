@@ -43,7 +43,7 @@
 	"Minesweeper.h"
 	<stdio.h>
 
-1527220896 source:c:\users\alex\documents\github\ics3u-summative-1.0\djordjevic_ics3u_minesweeper\clicker.cpp
+1527316076 source:c:\users\alex\documents\github\ics3u-summative-1.0\djordjevic_ics3u_minesweeper\clicker.cpp
 	"Minesweeper.h"
 	<stdio.h>
 
@@ -54,7 +54,7 @@
 	<allegro5/allegro_ttf.h>
 	<allegro5/allegro_native_dialog.h>
 
-1527132769 source:c:\users\alex\documents\github\ics3u-summative-1.0\djordjevic_ics3u_minesweeper\mineplacer.cpp
+1527314603 source:c:\users\alex\documents\github\ics3u-summative-1.0\djordjevic_ics3u_minesweeper\mineplacer.cpp
 	<stdio.h>
 	"Minesweeper.h"
 	<time.h>
@@ -68,7 +68,7 @@
 	<allegro5/allegro_native_dialog.h>
 	"Minesweeper.h"
 
-1527220703 source:c:\users\alex\documents\github\ics3u-summative-1.0\djordjevic_ics3u_minesweeper\minesweeper_main.cpp
+1527316246 source:c:\users\alex\documents\github\ics3u-summative-1.0\djordjevic_ics3u_minesweeper\minesweeper_main.cpp
 	<stdio.h>
 	"Minesweeper.h"
 
@@ -105,7 +105,7 @@
 	<stdio.h>
 	"Minesweeper.h"
 
-1527220527 source:c:\users\alex\documents\github\ics3u-summative-1.0\djordjevic_ics3u_minesweeper\drawgrid.cpp
+1527314831 source:c:\users\alex\documents\github\ics3u-summative-1.0\djordjevic_ics3u_minesweeper\drawgrid.cpp
 	<stdio.h>
 	"Minesweeper.h"
 

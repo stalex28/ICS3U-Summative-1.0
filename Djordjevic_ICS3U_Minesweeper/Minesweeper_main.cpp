@@ -45,6 +45,7 @@ int main(int argc, char *argv[]){
 	// move ball across screen using keyboard.
 	int dx = 48;
 	int dy = 67;
+	int winner = 0;
 	char f = 'o';
 	al_clear_to_color(SLATEGREY);
 	al_draw_text(font, BLACK, 640/2, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr pre-alpha");
@@ -105,7 +106,19 @@ int main(int argc, char *argv[]){
 		 	al_flip_display();
 		}
 	}
-
+    for(int i = 0; i <= number; i++){
+        if(fields[i] == 9){
+            winner ++;
+        }
+    }
+    if(winner == 0){
+        al_draw_text(font, BLACK, 640/2, 500, ALLEGRO_ALIGN_CENTRE, "You won!");
+    }
+    else{
+        al_draw_text(font, BLACK, 640/2, 500, ALLEGRO_ALIGN_CENTRE, "Better luck next time :(");
+    }
+    al_flip_display();
+    al_rest(5);
 	//Release the bitmap data and exit with no errors
 	al_destroy_display(display);
 	return 0;

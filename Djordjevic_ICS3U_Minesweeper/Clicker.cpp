@@ -13,22 +13,18 @@ bool clicker(int fields[], int x, int y, char f){
             case 9:
                 exit = true;
                 break;
+            default:
+                if(fields[holder] < 20)
+                fields[holder] += 20;
+                break;
         }
     }
     else if(f == 'f'){
-        switch(fields[holder]){
-            case 0:
-                fields[holder] = 11;
-                break;
-            case 9:
-                fields[holder] = 19;
-                break;
-            case 11:
-                fields[holder] = 0;
-                break;
-            case 19:
-                fields[holder] = 9;
-                break;
+        if(fields[holder] <= 9){
+            fields[holder] += 11;
+        }
+        else if(fields[holder] > 10 && fields[holder] < 20){
+            fields[holder] -=11;
         }
     }
     return exit;

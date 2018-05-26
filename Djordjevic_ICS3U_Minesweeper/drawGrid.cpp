@@ -2,7 +2,7 @@
 #include "Minesweeper.h"
 
 int drawGrid(int fields[], int x, int y, int num){
-    ALLEGRO_BITMAP *square = nullptr;
+    ALLEGRO_BITMAP *tile = nullptr;
     ALLEGRO_BITMAP *clearField = nullptr;
     ALLEGRO_BITMAP *flag = nullptr;
     ALLEGRO_BITMAP *one = nullptr;
@@ -49,38 +49,44 @@ int drawGrid(int fields[], int x, int y, int num){
         xco = (i - (yco * 8))*50 + 50;
         yco = yco*50 + 70;
         switch(fields[i]){
-            case 1:
+            case 21:
                 al_draw_bitmap(one, xco, yco, 0);
                 break;
-            case 2:
+            case 22:
                 al_draw_bitmap(two, xco, yco, 0);
                 break;
-            case 3:
+            case 23:
                 al_draw_bitmap(three, xco, yco, 0);
                 break;
-            case 4:
+            case 24:
                 al_draw_bitmap(four, xco, yco, 0);
                 break;
-            case 5:
+            case 25:
                 al_draw_bitmap(five, xco, yco, 0);
                 break;
-            case 6:
+            case 26:
                 al_draw_bitmap(six, xco, yco, 0);
                 break;
-            case 7:
+            case 27:
                 al_draw_bitmap(seven, xco, yco, 0);
                 break;
-            case 8:
+            case 28:
                 al_draw_bitmap(eight, xco, yco, 0);
                 break;
             case 10:
                 al_draw_bitmap(clearField, xco, yco, 0);
                 break;
-            case 19:
             case 11:
+            case 12:
+            case 13:
+            case 14:
+            case 15:
+            case 16:
+            case 17:
+            case 18:
+            case 19:
+            case 20:
                 al_draw_bitmap(flag, xco, yco, 0);
-                break;
-            default:
                 break;
         }
     }
