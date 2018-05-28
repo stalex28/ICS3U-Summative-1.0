@@ -118,7 +118,7 @@ int main(int argc, char *argv[]){
         al_draw_text(font, BLACK, 640/2, 500, ALLEGRO_ALIGN_CENTRE, "Better luck next time :(");
     }
     al_flip_display();
-    al_rest(5);
+    al_rest(3);
 	//Release the bitmap data and exit with no errors
 	al_destroy_display(display);
 	return 0;

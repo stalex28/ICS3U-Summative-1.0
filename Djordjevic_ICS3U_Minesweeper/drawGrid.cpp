@@ -23,9 +23,9 @@ int drawGrid(int fields[], int x, int y, int num){
     eight = al_load_bitmap("8.bmp");
 	flag = al_load_bitmap("Flag.bmp");
 	tile = al_load_bitmap("Tile.bmp");
-	clearField = al_load_bitmap("clear.bmp");
+	clearField = al_load_bitmap("Tile press.bmp");
 	al_convert_mask_to_alpha(tile, BLACK);
-	al_convert_mask_to_alpha(clearField, BLACK);
+	al_convert_mask_to_alpha(clearField, WHITE);
 	al_convert_mask_to_alpha(flag, BLACK);
 	al_convert_mask_to_alpha(one, BLACK);
 	al_convert_mask_to_alpha(two, BLACK);
@@ -72,6 +72,9 @@ int drawGrid(int fields[], int x, int y, int num){
                 break;
             case 28:
                 al_draw_bitmap(eight, xco, yco, 0);
+                break;
+            case 9:
+                al_draw_bitmap(tile, xco, yco, 0);
                 break;
             case 10:
                 al_draw_bitmap(clearField, xco, yco, 0);
