@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="Clicker.cpp" />
+		<Unit filename="FieldClear.cpp" />
 		<Unit filename="MinePlacer.cpp" />
 		<Unit filename="Minesweeper.h" />
 		<Unit filename="MinesweeperAllegro.cpp" />

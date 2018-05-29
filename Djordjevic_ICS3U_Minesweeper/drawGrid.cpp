@@ -22,10 +22,10 @@ int drawGrid(int fields[], int x, int y, int num){
     seven = al_load_bitmap("7.bmp");
     eight = al_load_bitmap("8.bmp");
 	flag = al_load_bitmap("Flag.bmp");
-	tile = al_load_bitmap("Tile.bmp");
-	clearField = al_load_bitmap("Tile press.bmp");
-	al_convert_mask_to_alpha(tile, BLACK);
-	al_convert_mask_to_alpha(clearField, WHITE);
+	tile = al_load_bitmap("Tile press.bmp");
+	clearField = al_load_bitmap("Tile.bmp");
+	al_convert_mask_to_alpha(tile, WHITE);
+	al_convert_mask_to_alpha(clearField, BLACK);
 	al_convert_mask_to_alpha(flag, BLACK);
 	al_convert_mask_to_alpha(one, BLACK);
 	al_convert_mask_to_alpha(two, BLACK);
@@ -38,42 +38,51 @@ int drawGrid(int fields[], int x, int y, int num){
 	int xco = 0;
 	int yco = 0;
 
-    for(int i = 50; i <= (height*20); i+= 50){
-        for(int j = 70; j <= (width*20 + 20); j+= 50){
+    for(int i = 50; i <= (height*17); i+= 40){
+        for(int j = 70; j <= (width*17 + 20); j+= 40){
                 al_draw_bitmap(tile, i, j, 0);
         }
     }
 
     for(int i = 0; i <= num; i++){
         yco = i / 8;
-        xco = (i - (yco * 8))*50 + 50;
-        yco = yco*50 + 70;
+        xco = (i - (yco * 8))*40 + 50;
+        yco = yco*40 + 70;
         switch(fields[i]){
             case 21:
+                al_draw_bitmap(clearField, xco, yco, 0);
                 al_draw_bitmap(one, xco, yco, 0);
                 break;
             case 22:
+                al_draw_bitmap(clearField, xco, yco, 0);
                 al_draw_bitmap(two, xco, yco, 0);
                 break;
             case 23:
+                al_draw_bitmap(clearField, xco, yco, 0);
                 al_draw_bitmap(three, xco, yco, 0);
                 break;
             case 24:
+                al_draw_bitmap(clearField, xco, yco, 0);
                 al_draw_bitmap(four, xco, yco, 0);
                 break;
             case 25:
+                al_draw_bitmap(clearField, xco, yco, 0);
                 al_draw_bitmap(five, xco, yco, 0);
                 break;
             case 26:
+                al_draw_bitmap(clearField, xco, yco, 0);
                 al_draw_bitmap(six, xco, yco, 0);
                 break;
             case 27:
+                al_draw_bitmap(clearField, xco, yco, 0);
                 al_draw_bitmap(seven, xco, yco, 0);
                 break;
             case 28:
+                al_draw_bitmap(clearField, xco, yco, 0);
                 al_draw_bitmap(eight, xco, yco, 0);
                 break;
             case 9:
+                al_draw_bitmap(clearField, xco, yco, 0);
                 al_draw_bitmap(tile, xco, yco, 0);
                 break;
             case 10:

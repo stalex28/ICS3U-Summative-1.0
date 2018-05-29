@@ -48,7 +48,7 @@ int main(int argc, char *argv[]){
 	int winner = 0;
 	char f = 'o';
 	al_clear_to_color(SLATEGREY);
-	al_draw_text(font, BLACK, 640/2, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr pre-alpha");
+	al_draw_text(font, BLACK, 640/2, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr alpha");
 	drawGrid(fields, dx, dy, number);
     al_draw_bitmap(selector, dx, dy, 0);
 	al_flip_display();
@@ -64,16 +64,16 @@ int main(int argc, char *argv[]){
       	else if (ev.type == ALLEGRO_EVENT_KEY_DOWN) {
          	switch(ev.keyboard.keycode) {
             	case ALLEGRO_KEY_UP:
-               		dy -= 50;
+               		dy -= 40;
                		break;
 	            case ALLEGRO_KEY_DOWN:
-    		        dy += 50;
+    		        dy += 40;
             		break;
             	case ALLEGRO_KEY_LEFT:
-               		dx -= 50;
+               		dx -= 40;
                		break;
 	            case ALLEGRO_KEY_RIGHT:
-               		dx += 50;
+               		dx += 40;
                		break;
                	case ALLEGRO_KEY_ESCAPE:
                		doexit = true;
@@ -87,20 +87,20 @@ int main(int argc, char *argv[]){
                     doexit = clicker(fields, dx, dy, f);
                     break;
          	}
-         	if(dx > height*20-2){
-                dx = height*20-2;
+         	if(dx > height*16+8){
+                dx = height*16+8;
          	}
          	if(dx < 48){
                 dx = 48;
          	}
-         	if(dy > width*20+17){
-                dy = width*20+17;
+         	if(dy > width*17+7){
+                dy = width*17+7;
          	}
          	if(dy < 67){
                 dy = 67;
          	}
          	al_clear_to_color(SLATEGREY);
-		 	al_draw_text(font, BLACK, 640/2, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr pre-alpha");
+		 	al_draw_text(font, BLACK, 640/2, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr alpha");
 		 	drawGrid(fields, dx, dy, number);
 		 	al_draw_bitmap(selector, dx, dy, 0);
 		 	al_flip_display();
