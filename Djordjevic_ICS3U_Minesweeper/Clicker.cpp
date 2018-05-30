@@ -9,20 +9,7 @@ bool clicker(int fields[], int x, int y, char f){
         switch(fields[holder]){
             case 0:
                 fields[holder] = 10;
-                for(int i = 9; i >= 7; i--){
-                    if(fields[holder-i] == 0){
-                        fields[holder-i] = 10;
-                    }
-                    if(fields[holder+i] == 0){
-                        fields[holder+i] = 10;
-                    }
-                }
-                if(fields[holder-1] == 0){
-                    fields[holder-1] = 10;
-                }
-                if(fields[holder+1] == 0){
-                    fields[holder+1] = 10;
-                }
+                fieldClear(fields);
                 break;
             case 9:
                 exit = true;
