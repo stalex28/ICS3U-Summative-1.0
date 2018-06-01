@@ -38,16 +38,16 @@ int drawGrid(int fields[], int x, int y, int num){
 	int xco = 0;
 	int yco = 0;
 
-    for(int i = 50; i <= (height*17); i+= 40){
-        for(int j = 70; j <= (width*17 + 20); j+= 40){
+    for(int i = 50; i <= (height*13); i+= 30){
+        for(int j = 70; j <= (width*13 + 20); j+= 30){
                 al_draw_bitmap(tile, i, j, 0);
         }
     }
 
     for(int i = 0; i <= num; i++){
         yco = i / 8;
-        xco = (i - (yco * 8))*40 + 50;
-        yco = yco*40 + 70;
+        xco = (i - (yco * 8))*30 + 50;
+        yco = yco*30 + 70;
         switch(fields[i]){
             case 21:
                 al_draw_bitmap(clearField, xco, yco, 0);

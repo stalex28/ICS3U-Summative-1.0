@@ -39,6 +39,8 @@ int main(int argc, char *argv[]){
     }
 
 	ALLEGRO_BITMAP *selector = nullptr;
+	ALLEGRO_BITMAP *bg = nullptr;
+	bg = al_load_bitmap("BG.bmp");
 	selector = al_load_bitmap("square1.bmp");
 	al_convert_mask_to_alpha(selector, BLACK);
 
@@ -47,7 +49,7 @@ int main(int argc, char *argv[]){
 	int dy = 67;
 	int winner = 0;
 	char f = 'o';
-	al_clear_to_color(SLATEGREY);
+	al_draw_bitmap(bg, 0, 0, 0);
 	al_draw_text(font, BLACK, 640/2, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr alpha");
 	drawGrid(fields, dx, dy, number);
     al_draw_bitmap(selector, dx, dy, 0);
@@ -64,16 +66,16 @@ int main(int argc, char *argv[]){
       	else if (ev.type == ALLEGRO_EVENT_KEY_DOWN) {
          	switch(ev.keyboard.keycode) {
             	case ALLEGRO_KEY_UP:
-               		dy -= 40;
+               		dy -= 30;
                		break;
 	            case ALLEGRO_KEY_DOWN:
-    		        dy += 40;
+    		        dy += 30;
             		break;
             	case ALLEGRO_KEY_LEFT:
-               		dx -= 40;
+               		dx -= 30;
                		break;
 	            case ALLEGRO_KEY_RIGHT:
-               		dx += 40;
+               		dx += 30;
                		break;
                	case ALLEGRO_KEY_ESCAPE:
                		doexit = true;
@@ -87,19 +89,19 @@ int main(int argc, char *argv[]){
                     doexit = clicker(fields, dx, dy, f);
                     break;
          	}
-         	if(dx > height*16+8){
-                dx = height*16+8;
+         	if(dx > height*12+18){
+                dx = height*12+18;
          	}
          	if(dx < 48){
                 dx = 48;
          	}
-         	if(dy > width*17+7){
-                dy = width*17+7;
+         	if(dy > width*14-3){
+                dy = width*14-3;
          	}
          	if(dy < 67){
                 dy = 67;
          	}
-         	al_clear_to_color(SLATEGREY);
+         	al_draw_bitmap(bg, 0, 0, 0);
 		 	al_draw_text(font, BLACK, 640/2, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr alpha");
 		 	drawGrid(fields, dx, dy, number);
 		 	al_draw_bitmap(selector, dx, dy, 0);
@@ -118,7 +120,7 @@ int main(int argc, char *argv[]){
         al_draw_text(font, BLACK, 640/2, 500, ALLEGRO_ALIGN_CENTRE, "Better luck next time :(");
     }
     al_flip_display();
-    al_rest(3);
+    //al_rest(3);
 	//Release the bitmap data and exit with no errors
 	al_destroy_display(display);
 	return 0;
