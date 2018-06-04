@@ -7,7 +7,7 @@ int minePlacer(int fields[], int number, int mines){
     srand(time(0));
     int counter = 0;
     for(int i = 1; i <= mines; i++){
-        picker = rand() % number;
+        picker = rand() % (number + 1);
         while(fields[picker] == 9){
             picker = rand() % number;
         }

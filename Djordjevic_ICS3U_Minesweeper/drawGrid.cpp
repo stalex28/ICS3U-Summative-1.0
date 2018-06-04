@@ -102,5 +102,16 @@ int drawGrid(int fields[], int x, int y, int num){
                 break;
         }
     }
+    al_destroy_bitmap(tile);
+    al_destroy_bitmap(flag);
+    al_destroy_bitmap(clearField);
+    al_destroy_bitmap(one);
+    al_destroy_bitmap(two);
+    al_destroy_bitmap(three);
+    al_destroy_bitmap(four);
+    al_destroy_bitmap(five);
+    al_destroy_bitmap(six);
+    al_destroy_bitmap(seven);
+    al_destroy_bitmap(eight);
     return 0;
 }

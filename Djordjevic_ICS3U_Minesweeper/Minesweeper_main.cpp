@@ -26,7 +26,7 @@ int main(int argc, char *argv[]){
 
  	//Place mines randomly
     int number = 63;
-    int mines = 10;
+    int mines = 5;
     int fields[64] = {0};
     minePlacer(fields, number, mines);
     for(int i = 0; i <= number; i++){
@@ -80,7 +80,7 @@ int main(int argc, char *argv[]){
                	case ALLEGRO_KEY_ESCAPE:
                		doexit = true;
                		break;
-                case ALLEGRO_KEY_ENTER:
+                case ALLEGRO_KEY_SPACE:
                     f = 'o';
                     doexit = clicker(fields, dx, dy, f);
                     break;
