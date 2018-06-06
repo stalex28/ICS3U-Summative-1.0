@@ -13,6 +13,7 @@ int drawGrid(int fields[], int x, int y, int num){
     ALLEGRO_BITMAP *six = nullptr;
     ALLEGRO_BITMAP *seven = nullptr;
     ALLEGRO_BITMAP *eight = nullptr;
+    ALLEGRO_BITMAP *bomb = nullptr;
     one = al_load_bitmap("1.bmp");
     two = al_load_bitmap("2.bmp");
     three = al_load_bitmap("3.bmp");
@@ -24,6 +25,7 @@ int drawGrid(int fields[], int x, int y, int num){
 	flag = al_load_bitmap("Flag.bmp");
 	tile = al_load_bitmap("Tile press.bmp");
 	clearField = al_load_bitmap("Tile.bmp");
+	bomb = al_load_bitmap("bomb.bmp");
 	al_convert_mask_to_alpha(tile, WHITE);
 	al_convert_mask_to_alpha(clearField, BLACK);
 	al_convert_mask_to_alpha(flag, BLACK);
@@ -35,18 +37,19 @@ int drawGrid(int fields[], int x, int y, int num){
 	al_convert_mask_to_alpha(six, BLACK);
 	al_convert_mask_to_alpha(seven, BLACK);
 	al_convert_mask_to_alpha(eight, BLACK);
+	al_convert_mask_to_alpha(bomb, BLACK);
 	int xco = 0;
 	int yco = 0;
 
-    for(int i = 50; i <= (height*13); i+= 30){
-        for(int j = 70; j <= (width*13 + 20); j+= 30){
+    for(int i = 50; i <= (height*10); i+= 30){
+        for(int j = 70; j <= (width*10 + 20); j+= 30){
                 al_draw_bitmap(tile, i, j, 0);
         }
     }
 
     for(int i = 0; i <= num; i++){
-        yco = i / 8;
-        xco = (i - (yco * 8))*30 + 50;
+        yco = i / 10;
+        xco = (i - (yco * 10))*30 + 50;
         yco = yco*30 + 70;
         switch(fields[i]){
             case 21:
@@ -100,6 +103,9 @@ int drawGrid(int fields[], int x, int y, int num){
             case 20:
                 al_draw_bitmap(flag, xco, yco, 0);
                 break;
+            case 31:
+                al_draw_bitmap(bomb, xco, yco, 0);
+                break;
         }
     }
     al_destroy_bitmap(tile);
@@ -113,5 +119,6 @@ int drawGrid(int fields[], int x, int y, int num){
     al_destroy_bitmap(six);
     al_destroy_bitmap(seven);
     al_destroy_bitmap(eight);
+    al_destroy_bitmap(bomb);
     return 0;
 }

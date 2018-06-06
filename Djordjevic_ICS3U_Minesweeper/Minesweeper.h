@@ -14,8 +14,8 @@ const int SCREEN_H = 600;
 #include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_native_dialog.h>
 
-const int height = 20;
-const int width = 20;
+const int height = 32;
+const int width = 32;
 
 struct TimeFormat{
     int minute;

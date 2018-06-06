@@ -20,37 +20,37 @@ int minePlacer(int fields[], int number, int mines){
                     if(fields[1] == 9){
                         counter ++;
                     }
-                    for(int j = 8; j <= 9; j++){
+                    for(int j = 10; j <= 11; j++){
                         if(fields[j] == 9){
                             counter ++;
                         }
                     }
                     break;
-                case 7:
-                    if(fields [6] == 9){
+                case 9:
+                    if(fields [8] == 9){
                         counter ++;
                     }
-                    for(int j = 14; j <= 15; j++){
+                    for(int j = 18; j <= 19; j++){
                         if(fields[j] == 9){
                             counter ++;
                         }
                     }
                     break;
-                case 56:
-                    if(fields[57] == 9){
+                case 90:
+                    if(fields[91] == 9){
                         counter ++;
                     }
-                    for(int j = 48; j <= 49; j++){
+                    for(int j = 80; j <= 81; j++){
                         if(fields[j] == 9){
                             counter ++;
                         }
                     }
                     break;
-                case 63:
-                    if(fields[62] == 9){
+                case 99:
+                    if(fields[98] == 9){
                         counter ++;
                     }
-                    for(int j = 54; j <= 55; j++){
+                    for(int j = 88; j <= 89; j++){
                         if(fields[j] == 9){
                             counter ++;
                         }
@@ -62,35 +62,9 @@ int minePlacer(int fields[], int number, int mines){
                 case 4:
                 case 5:
                 case 6:
-                    if(fields[i-1] == 9){
-                        counter ++;
-                    }
-                    if(fields[i+1] == 9){
-                        counter ++;
-                    }
-                    if(fields[i+7] == 9){
-                        counter ++;
-                    }
-                    if(fields[i+8] == 9){
-                        counter ++;
-                    }
-                    if(fields[i+9] == 9){
-                        counter ++;
-                    }
-                    break;
+                case 7:
                 case 8:
-                case 16:
-                case 24:
-                case 32:
-                case 40:
-                case 48:
-                    if(fields[i-8] == 9){
-                        counter ++;
-                    }
-                    if(fields[i+8] == 9){
-                        counter ++;
-                    }
-                    if(fields[i-7] == 9){
+                    if(fields[i-1] == 9){
                         counter ++;
                     }
                     if(fields[i+1] == 9){
@@ -99,48 +73,82 @@ int minePlacer(int fields[], int number, int mines){
                     if(fields[i+9] == 9){
                         counter ++;
                     }
+                    if(fields[i+10] == 9){
+                        counter ++;
+                    }
+                    if(fields[i+11] == 9){
+                        counter ++;
+                    }
                     break;
-                case 15:
-                case 23:
-                case 31:
-                case 39:
-                case 47:
-                case 55:
-                    if(fields[i-8] == 9){
+                case 10:
+                case 20:
+                case 30:
+                case 40:
+                case 50:
+                case 60:
+                case 70:
+                case 80:
+                    if(fields[i-10] == 9){
                         counter ++;
                     }
-                    if(fields[i+8] == 9){
-                        counter ++;
-                    }
-                    if(fields[i+7] == 9){
-                        counter ++;
-                    }
-                    if(fields[i-1] == 9){
+                    if(fields[i+10] == 9){
                         counter ++;
                     }
                     if(fields[i-9] == 9){
                         counter ++;
                     }
+                    if(fields[i+1] == 9){
+                        counter ++;
+                    }
+                    if(fields[i+11] == 9){
+                        counter ++;
+                    }
                     break;
-                case 57:
-                case 58:
+                case 19:
+                case 29:
+                case 39:
+                case 49:
                 case 59:
-                case 60:
-                case 61:
-                case 62:
+                case 69:
+                case 79:
+                case 89:
+                    if(fields[i-10] == 9){
+                        counter ++;
+                    }
+                    if(fields[i+10] == 9){
+                        counter ++;
+                    }
+                    if(fields[i+9] == 9){
+                        counter ++;
+                    }
+                    if(fields[i-1] == 9){
+                        counter ++;
+                    }
+                    if(fields[i-11] == 9){
+                        counter ++;
+                    }
+                    break;
+                case 91:
+                case 92:
+                case 93:
+                case 94:
+                case 95:
+                case 96:
+                case 97:
+                case 98:
                     if(fields[i-1] == 9){
                         counter ++;
                     }
                     if(fields[i+1] == 9){
                         counter ++;
                     }
+                    if(fields[i-11] == 9){
+                        counter ++;
+                    }
+                    if(fields[i-10] == 9){
+                        counter ++;
+                    }
                     if(fields[i-9] == 9){
-                        counter ++;
-                    }
-                    if(fields[i-8] == 9){
-                        counter ++;
-                    }
-                    if(fields[i-7] == 9){
                         counter ++;
                     }
                     break;
@@ -151,22 +159,22 @@ int minePlacer(int fields[], int number, int mines){
                     if(fields[i+1] == 9){
                         counter ++;
                     }
+                    if(fields[i-11] == 9){
+                        counter ++;
+                    }
+                    if(fields[i-10] == 9){
+                        counter ++;
+                    }
                     if(fields[i-9] == 9){
                         counter ++;
                     }
-                    if(fields[i-8] == 9){
-                        counter ++;
-                    }
-                    if(fields[i-7] == 9){
-                        counter ++;
-                    }
-                    if(fields[i+7] == 9){
-                        counter ++;
-                    }
-                    if(fields[i+8] == 9){
-                        counter ++;
-                    }
                     if(fields[i+9] == 9){
+                        counter ++;
+                    }
+                    if(fields[i+10] == 9){
+                        counter ++;
+                    }
+                    if(fields[i+11] == 9){
                         counter ++;
                     }
                     break;

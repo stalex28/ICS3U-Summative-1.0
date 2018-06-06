@@ -4,7 +4,7 @@
 bool clicker(int fields[], int x, int y, char f){
     int holder = 0;
     bool exit = false;
-    holder = ((y-67) / 30 * 8) + ((x-48) / 30);
+    holder = ((y-67) / 30 * 10) + ((x-48) / 30);
     if(f == 'o'){
         switch(fields[holder]){
             case 0:

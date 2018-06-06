@@ -25,9 +25,9 @@ int main(int argc, char *argv[]){
  	al_register_event_source(event_queue, al_get_keyboard_event_source());
 
  	//Place mines randomly
-    int number = 63;
-    int mines = 5;
-    int fields[64] = {0};
+    int number = 99;
+    int mines = 10;
+    int fields[100] = {0};
     minePlacer(fields, number, mines);
     for(int i = 0; i <= number; i++){
         if(fields[i] == 0){
@@ -45,6 +45,8 @@ int main(int argc, char *argv[]){
 	al_convert_mask_to_alpha(selector, BLACK);
 
 	// move ball across screen using keyboard.
+	int x = 10;
+	int y = 10;
 	int dx = 48;
 	int dy = 67;
 	int winner = 0;
@@ -89,14 +91,14 @@ int main(int argc, char *argv[]){
                     doexit = clicker(fields, dx, dy, f);
                     break;
          	}
-         	if(dx > height*12+18){
-                dx = height*12+18;
+         	if(dx > (x-1)*30+48){
+                dx = (x-1)*30+48;
          	}
          	if(dx < 48){
                 dx = 48;
          	}
-         	if(dy > width*14-3){
-                dy = width*14-3;
+         	if(dy > (y-1)*30+67){
+                dy = (y-1)*30+67;
          	}
          	if(dy < 67){
                 dy = 67;
@@ -118,9 +120,15 @@ int main(int argc, char *argv[]){
     }
     else{
         al_draw_text(font, BLACK, 640/2, 500, ALLEGRO_ALIGN_CENTRE, "Better luck next time :(");
+        for(int i = 0; i <= number; i ++){
+            if(fields[i] == 9){
+                fields[i] = 31;
+            }
+            drawGrid(fields, dx, dy, number);
+        }
     }
     al_flip_display();
-    //al_rest(3);
+    al_rest(3);
 	//Release the bitmap data and exit with no errors
 	al_destroy_display(display);
 	return 0;
