@@ -26,7 +26,7 @@ int main(int argc, char *argv[]){
 
  	//Place mines randomly
     int number = 99;
-    int mines = 10;
+    int mines = 30;
     int fields[100] = {0};
     minePlacer(fields, number, mines);
     for(int i = 0; i <= number; i++){
@@ -128,7 +128,7 @@ int main(int argc, char *argv[]){
         }
     }
     al_flip_display();
-    al_rest(3);
+    al_rest(2);
 	//Release the bitmap data and exit with no errors
 	al_destroy_display(display);
 	return 0;
