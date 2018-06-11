@@ -1,5 +1,5 @@
-const int SCREEN_W = 800;
-const int SCREEN_H = 600;
+const int SCREEN_W = 400;
+const int SCREEN_H = 450;
 
 #define BACKGROUND al_map_rgb(0xff, 0xff, 0xff)
 #define FOREGROUND al_map_rgb(0x3C, 0x64, 0x78)

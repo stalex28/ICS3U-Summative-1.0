@@ -7,7 +7,7 @@
 int main(int argc, char *argv[]){
     initializeAllegro();
     ALLEGRO_DISPLAY *display = al_create_display(SCREEN_W, SCREEN_H);
-    ALLEGRO_FONT *font = al_load_ttf_font("SF_Cartoonist_Hand.ttf", 36, 0);
+    ALLEGRO_FONT *font = al_load_ttf_font("NORIKEE DEMO.ttf", 28, 0);
     checkSetup(display, font);
     ALLEGRO_EVENT_QUEUE *event_queue = nullptr;
 
@@ -22,7 +22,7 @@ int main(int argc, char *argv[]){
 
 	//initialization of variables
 	int number = 99;
-    int mines = 30;
+    int mines = 10;
     int fields[100] = {0};
     int x = 10;
 	int y = 10;
@@ -45,7 +45,7 @@ int main(int argc, char *argv[]){
 
 	//rendering of
 	al_draw_bitmap(bg, 0, 0, 0);
-	al_draw_text(font, BLACK, 640/2, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr alpha");
+	al_draw_text(font, WHITE, 200, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr beta");
 	drawGrid(fields, dx, dy, number);
     al_draw_bitmap(selector, dx, dy, 0);
 	al_flip_display();
@@ -105,7 +105,7 @@ int main(int argc, char *argv[]){
                 dy = 67;
          	}
          	al_draw_bitmap(bg, 0, 0, 0);
-		 	al_draw_text(font, BLACK, 640/2, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr alpha");
+		 	al_draw_text(font, WHITE, 200, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr beta");
 		 	drawGrid(fields, dx, dy, number);
 		 	al_draw_bitmap(selector, dx, dy, 0);
 		 	al_flip_display();
@@ -117,10 +117,10 @@ int main(int argc, char *argv[]){
         }
     }
     if(winner == 0 && f != 'p'){
-        al_draw_text(font, BLACK, 640/2, 500, ALLEGRO_ALIGN_CENTRE, "You won!");
+        al_draw_text(font, WHITE, 200, 380, ALLEGRO_ALIGN_CENTRE, "You won!");
     }
     else{
-        al_draw_text(font, BLACK, 640/2, 500, ALLEGRO_ALIGN_CENTRE, "Better luck next time :(");
+        al_draw_text(font, WHITE, 220, 380, ALLEGRO_ALIGN_CENTRE, "Better luck next time :(");
         if(f != 'p'){
             for(int i = 0; i <= number; i ++){
                 if(fields[i] == 9){

@@ -9,7 +9,7 @@ int minePlacer(int fields[], int number, int x, int mines){
     for(int i = 1; i <= mines; i++){
         picker = rand() % (number + 1);
         while(fields[picker] == 9 || picker == x || picker == (x+1) || picker == (x-1) || picker == (x-9) || picker == (x-10) || picker == (x-11) || picker == (x+9) || picker == (x+10) || picker == (x+11)){
-            picker = rand() % number;
+            picker = rand() % (number+1);
         }
         fields[picker] = 9;
     }
