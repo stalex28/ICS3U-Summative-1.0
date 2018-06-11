@@ -2,13 +2,13 @@
 #include "Minesweeper.h"
 #include <time.h>
 
-int minePlacer(int fields[], int number, int mines){
+int minePlacer(int fields[], int number, int x, int mines){
     int picker = 0;
     srand(time(0));
     int counter = 0;
     for(int i = 1; i <= mines; i++){
         picker = rand() % (number + 1);
-        while(fields[picker] == 9){
+        while(fields[picker] == 9 || picker == x || picker == (x+1) || picker == (x-1) || picker == (x-9) || picker == (x-10) || picker == (x-11) || picker == (x+9) || picker == (x+10) || picker == (x+11)){
             picker = rand() % number;
         }
         fields[picker] = 9;

@@ -20,37 +20,30 @@ int main(int argc, char *argv[]){
       	return -1;
 	}
 
+	//initialization of variables
+	int number = 99;
+    int mines = 30;
+    int fields[100] = {0};
+    int x = 10;
+	int y = 10;
+	int primary = 0;
+	int dx = 168;
+	int dy = 187;
+	int winner = 0;
+	char f = 'p';
+
 	// need to register events for our event queue
 	al_register_event_source(event_queue, al_get_display_event_source(display));
  	al_register_event_source(event_queue, al_get_keyboard_event_source());
 
- 	//Place mines randomly
-    int number = 99;
-    int mines = 30;
-    int fields[100] = {0};
-    minePlacer(fields, number, mines);
-    for(int i = 0; i <= number; i++){
-        if(fields[i] == 0){
-            printf("%d\n", fields[i]);
-        }
-        else{
-            printf("\t%d\n", fields[i]);
-        }
-    }
-
+ 	//loading of bitmaps
 	ALLEGRO_BITMAP *selector = nullptr;
 	ALLEGRO_BITMAP *bg = nullptr;
 	bg = al_load_bitmap("BG.bmp");
 	selector = al_load_bitmap("square1.bmp");
 	al_convert_mask_to_alpha(selector, BLACK);
 
-	// move ball across screen using keyboard.
-	int x = 10;
-	int y = 10;
-	int dx = 48;
-	int dy = 67;
-	int winner = 0;
-	char f = 'o';
+	//rendering of
 	al_draw_bitmap(bg, 0, 0, 0);
 	al_draw_text(font, BLACK, 640/2, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr alpha");
 	drawGrid(fields, dx, dy, number);
@@ -83,8 +76,16 @@ int main(int argc, char *argv[]){
                		doexit = true;
                		break;
                 case ALLEGRO_KEY_SPACE:
-                    f = 'o';
-                    doexit = clicker(fields, dx, dy, f);
+                    if(f == 'p'){
+                        primary = ((dy-67) / 30 * 10) + ((dx-48) / 30);
+                        minePlacer(fields, number, primary, mines);
+                        f = 'o';
+                        doexit = clicker(fields, dx, dy, f);
+                    }
+                    else{
+                        f = 'o';
+                        doexit = clicker(fields, dx, dy, f);
+                    }
                     break;
                 case ALLEGRO_KEY_F:
                     f = 'f';
@@ -115,16 +116,18 @@ int main(int argc, char *argv[]){
             winner ++;
         }
     }
-    if(winner == 0){
+    if(winner == 0 && f != 'p'){
         al_draw_text(font, BLACK, 640/2, 500, ALLEGRO_ALIGN_CENTRE, "You won!");
     }
     else{
         al_draw_text(font, BLACK, 640/2, 500, ALLEGRO_ALIGN_CENTRE, "Better luck next time :(");
-        for(int i = 0; i <= number; i ++){
-            if(fields[i] == 9){
-                fields[i] = 31;
+        if(f != 'p'){
+            for(int i = 0; i <= number; i ++){
+                if(fields[i] == 9){
+                    fields[i] = 31;
+                }
+                drawGrid(fields, dx, dy, number);
             }
-            drawGrid(fields, dx, dy, number);
         }
     }
     al_flip_display();
