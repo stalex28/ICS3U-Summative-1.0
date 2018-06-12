@@ -22,7 +22,9 @@ int main(int argc, char *argv[]){
 
 	//initialization of variables
 	int number = 99;
-    int mines = 10;
+    int mines = 20;
+    int fcounter = 0;
+    char printString[3] = "";
     int fields[100] = {0};
     int x = 10;
 	int y = 10;
@@ -45,7 +47,8 @@ int main(int argc, char *argv[]){
 
 	//rendering of
 	al_draw_bitmap(bg, 0, 0, 0);
-	al_draw_text(font, WHITE, 200, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr beta");
+	al_draw_text(font, WHITE, 200, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr");
+	//al_draw_text(font, WHITE, 200, 380, ALLEGRO_ALIGN_CENTRE, "num. of mines left:");
 	drawGrid(fields, dx, dy, number);
     al_draw_bitmap(selector, dx, dy, 0);
 	al_flip_display();
@@ -80,16 +83,18 @@ int main(int argc, char *argv[]){
                         primary = ((dy-67) / 30 * 10) + ((dx-48) / 30);
                         minePlacer(fields, number, primary, mines);
                         f = 'o';
-                        doexit = clicker(fields, dx, dy, f);
+                        doexit = clicker(fields, dx, dy, f, fcounter);
                     }
                     else{
                         f = 'o';
-                        doexit = clicker(fields, dx, dy, f);
+                        doexit = clicker(fields, dx, dy, f, fcounter);
                     }
                     break;
                 case ALLEGRO_KEY_F:
-                    f = 'f';
-                    doexit = clicker(fields, dx, dy, f);
+                    if(f == 'o' || f == 'f'){
+                        f = 'f';
+                        doexit = clicker(fields, dx, dy, f, fcounter);
+                    }
                     break;
          	}
          	if(dx > (x-1)*30+48){
@@ -105,7 +110,8 @@ int main(int argc, char *argv[]){
                 dy = 67;
          	}
          	al_draw_bitmap(bg, 0, 0, 0);
-		 	al_draw_text(font, WHITE, 200, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr beta");
+		 	al_draw_text(font, WHITE, 200, (20), ALLEGRO_ALIGN_CENTRE, "SpaceSweepr");
+		 	//al_draw_text(font, WHITE, 200, 380, ALLEGRO_ALIGN_CENTRE, "num. of mines left: ");
 		 	drawGrid(fields, dx, dy, number);
 		 	al_draw_bitmap(selector, dx, dy, 0);
 		 	al_flip_display();

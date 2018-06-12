@@ -1,7 +1,7 @@
 #include "Minesweeper.h"
 #include <stdio.h>
 
-bool clicker(int fields[], int x, int y, char f){
+bool clicker(int fields[], int x, int y, char f, int &fcounter){
     int holder = 0;
     bool exit = false;
     holder = ((y-67) / 30 * 10) + ((x-48) / 30);
@@ -33,11 +33,15 @@ bool clicker(int fields[], int x, int y, char f){
         }
     }
     else if(f == 'f'){
-        if(fields[holder] <= 9){
+        if(fields[holder] <= 9 && fcounter < 20){
             fields[holder] += 11;
+            fcounter ++;
+            printf("%d\n", (20 - fcounter));
         }
         else if(fields[holder] > 10 && fields[holder] <= 20){
             fields[holder] -=11;
+            fcounter --;
+            printf("%d\n", (20 - fcounter));
         }
     }
     return exit;
