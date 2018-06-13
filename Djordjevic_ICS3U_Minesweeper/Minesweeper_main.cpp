@@ -22,7 +22,7 @@ int main(int argc, char *argv[]){
 
 	//initialization of variables
 	int number = 99;
-    int mines = 20;
+    int mines = 25;
     int fcounter = 0;
     char printString[3] = "";
     int fields[100] = {0};
@@ -83,17 +83,17 @@ int main(int argc, char *argv[]){
                         primary = ((dy-67) / 30 * 10) + ((dx-48) / 30);
                         minePlacer(fields, number, primary, mines);
                         f = 'o';
-                        doexit = clicker(fields, dx, dy, f, fcounter);
+                        doexit = clicker(fields, dx, dy, f, fcounter, mines);
                     }
                     else{
                         f = 'o';
-                        doexit = clicker(fields, dx, dy, f, fcounter);
+                        doexit = clicker(fields, dx, dy, f, fcounter, mines);
                     }
                     break;
                 case ALLEGRO_KEY_F:
                     if(f == 'o' || f == 'f'){
                         f = 'f';
-                        doexit = clicker(fields, dx, dy, f, fcounter);
+                        doexit = clicker(fields, dx, dy, f, fcounter, mines);
                     }
                     break;
          	}
