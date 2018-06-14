@@ -22,7 +22,7 @@ int main(int argc, char *argv[]){
 
 	//initialization of variables
 	int number = 99;
-    int mines = 25;
+    int mines = 15;
     int fcounter = 0;
     char printString[3] = "";
     int fields[100] = {0};
